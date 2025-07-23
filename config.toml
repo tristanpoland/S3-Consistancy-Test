@@ -1,0 +1,42 @@
+# S3 Configuration for Consistency Testing
+# This file contains the connection details for your S3-compatible storage
+
+# S3 endpoint URL (can be AWS S3, MinIO, DigitalOcean Spaces, etc.)
+endpoint = "https://s3.amazonaws.com"
+
+# Region (for AWS S3, use standard regions like "us-east-1")
+# For custom S3 implementations, this can be any string
+region = "us-east-1"
+
+# Bucket name to test against
+bucket = "your-test-bucket"
+
+# Access credentials
+access_key = "your-access-key"
+secret_key = "your-secret-key"
+
+# Path-style URLs (set to true for MinIO and some custom S3 implementations)
+# AWS S3 typically uses virtual-hosted-style URLs (false)
+path_style = false
+
+# Example configurations for different S3 providers:
+
+# AWS S3:
+# endpoint = "https://s3.amazonaws.com"
+# region = "us-east-1"
+# path_style = false
+
+# MinIO:
+# endpoint = "http://localhost:9000"
+# region = "us-east-1"
+# path_style = true
+
+# DigitalOcean Spaces:
+# endpoint = "https://nyc3.digitaloceanspaces.com"
+# region = "nyc3"
+# path_style = false
+
+# Cloudflare R2:
+# endpoint = "https://account-id.r2.cloudflarestorage.com"
+# region = "auto"
+# path_style = false
