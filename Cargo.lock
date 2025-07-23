@@ -3,7 +3,7 @@
 version = 4
 
 [[package]]
-name = "S3-Consistancy-Test"
+name = "S3-Consistency-Test"
 version = "1.0.0"
 dependencies = [
  "anyhow",
