@@ -257,13 +257,14 @@ impl S3ConsistencyTester {
         // Generate unique test file
         let file_key = format!("consistency-test-{}", Uuid::new_v4());
         let test_data = self.generate_test_data(args.file_size);
-        let upload_time = Utc::now();
         
         debug!("📤 Uploading test file: {}", file_key);
         
         // Attempt to upload the file
         match self.bucket.put_object(&file_key, &test_data).await {
             Ok(_) => {
+                // Record upload completion time - this is the baseline for consistency measurement
+                let upload_time = Utc::now();
                 debug!("✅ Successfully uploaded {}", file_key);
                 
                 // Register file for cleanup tracking
@@ -297,6 +298,7 @@ impl S3ConsistencyTester {
                 }
             }
             Err(e) => {
+                let upload_time = Utc::now(); // For error cases, use current time
                 error!("❌ Failed to upload test file {}: {}", file_key, e);
                 TestResult::failure(
                     file_key,
