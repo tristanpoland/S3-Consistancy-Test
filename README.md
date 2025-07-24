@@ -399,7 +399,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Built with the [rust-s3](https://crates.io/crates/rust-s3) crate
 - Uses [tokio](https://tokio.rs/) for async operations
-- CLI powered by [clap](https://clap.rs/)
+- CLI powered by [clap]([https://clap.rs/](https://docs.rs/clap/latest/clap/))
 - Statistics calculations inspired by industry best practices
 
 ---
